@@ -1,11 +1,4 @@
-
 #include <stdio.h>
-
-/*
- * Portfolio submission
- * Name: Sanad Dodokh
- * ID: 201953032
- */
 
 int main(void)
 {
@@ -13,26 +6,32 @@ int main(void)
    float ni_rate = 8.0;
    float tax_rate = 15.0;
 
-   // Calculations
-   float ni_contribution = salary * (ni_rate / 100.0);
+   float ni;
+   float tax;
+   float take_home;
 
-   float salary_after_ni = salary - ni_contribution;
+   // NI deduction
+   ni = salary * (ni_rate / 100.0);
 
-   float taxable_amount = salary_after_ni - 12500.0f;
-   if (taxable_amount < 0.0f)
+   float salary_after_ni = salary - ni;
+
+   // Tax only on portion above £12500
+   float taxable_amount = salary_after_ni - 12500.0;
+
+   if (taxable_amount < 0)
    {
-      taxable_amount = 0.0f;
+      taxable_amount = 0;
    }
 
-   float tax_contribution = taxable_amount * (tax_rate / 100.0f);
+   tax = taxable_amount * (tax_rate / 100.0);
 
-   float take_home_salary = salary_after_ni - tax_contribution;
+   // Final take-home
+   take_home = salary_after_ni - tax;
 
-   // Use only these print statements with appropriate formatting and variable names
    printf("Salary £%.2f\n", salary);
-   printf("NI contribution £%.2f\n", ni_contribution);
-   printf("Tax contribution £%.2f\n", tax_contribution);
-   printf("Take home salary £%.2f\n", take_home_salary);
+   printf("NI contribution £%.2f\n", ni);
+   printf("Tax contribution £%.2f\n", tax);
+   printf("Take home salary £%.2f\n", take_home);
 
    return 0;
 }
