@@ -18,7 +18,9 @@ int main(void)
    ni = salary * 0.12f;
    tax = salary * 0.20f;
    take_home = salary - ni - tax;
+
    // Use only these print statement with appropriate formatting and variable names
+
    printf("Salary £%.2f\n", salary);
    printf("NI contribution £%.2f\n", ni);
    printf("Tax contribution £%.2f\n", tax);
