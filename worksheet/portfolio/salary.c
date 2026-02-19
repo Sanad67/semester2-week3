@@ -11,13 +11,12 @@ int main(void)
 {
 
    // define and initialise variables for the problem data
-   float salary = 3000;
-   float ni = 300;
-   float tax = 300;
-   float take_home = 2000;
+   float salary;
+   float ni, tax, take_home;
+
    // calculate the deductions and final take-home salary
-   ni = salary * 0.12;
-   tax = salary * 0.20;
+   ni = salary * 0.12f;
+   tax = salary * 0.20f;
    take_home = salary - ni - tax;
    // Use only these print statement with appropriate formatting and variable names
    printf("Salary £%.2f\n", salary);
