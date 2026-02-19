@@ -12,9 +12,9 @@ int main(void)
 
    // define and initialise variables for the problem data
    float salary = 3000;
-   float ni;
-   float tax;
-   float take_home;
+   float ni = 300;
+   float tax = 300;
+   float take_home = 2000;
    // calculate the deductions and final take-home salary
    ni = salary * 0.12;
    tax = salary * 0.20;
