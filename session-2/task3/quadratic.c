@@ -9,20 +9,31 @@
 #include <stdio.h>
 #include <math.h>
 
-int main( void ) {
+int main(void)
+{
 
     float a = 1.0;
     float b = -5.0;
     float c = 6.0;
     float root1, root2;
+    float discriminant = b * b - 4 * a * c;
 
+    if (discriminant < 0)
+    {
+        printf("No real roots");
+        return 0;
+    }
+
+    root1 = (-b + sqrt(discriminant)) / (2 * a);
+    root2 = (-b - sqrt(discriminant)) / (2 * a);
+
+    printf("Root 1: %f\n", root1);
+    printf("Root 2: %f\n", root2);
     /*
      * Implement the formula for the 2 roots of a quadratic.
      * You can define additional variable for intermediate results to make the code simpler.
      * Print out the final results for the 2 roots as float values.
      */
-
-    
 
     return 0;
 }

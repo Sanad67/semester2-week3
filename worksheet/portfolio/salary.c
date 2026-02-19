@@ -3,21 +3,27 @@
 
 /*
  * Potrfolio submission
- * Name:
- * ID:
+ * Name: Sanad Dodokh
+ * ID:201953032
  */
 
- int main( void ) {
+int main(void)
+{
 
-    // define and initialise variables for the problem data 
+   // define and initialise variables for the problem data
+   float salary = 3000;
+   float ni;
+   float tax;
+   float take_home;
+   // calculate the deductions and final take-home salary
+   ni = salary * 0.12;
+   tax = salary * 0.20;
+   take_home = salary - ni - tax;
+   // Use only these print statement with appropriate formatting and variable names
+   printf("Salary £...", salary);
+   printf("NI contribution £...", ni);
+   printf("Tax contribution £...", tax);
+   printf("Take home salary £...", take_home);
 
-    // calculate the deductions and final take-home salary
-
-    // Use only these print statement with appropriate formatting and variable names
-    //printf("Salary £...",var_name);
-    //printf("NI contribution £...",var_name);
-    //printf("Tax contribution £...",var_name);
-    //printf("Take home salary £...",var_name);
-
-    return 0;
- }
+   return 0;
+}
