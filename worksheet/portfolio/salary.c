@@ -2,29 +2,37 @@
 #include <stdio.h>
 
 /*
- * Potrfolio submission
+ * Portfolio submission
  * Name: Sanad Dodokh
- * ID:201953032
+ * ID: 201953032
  */
 
 int main(void)
 {
+   float salary = 36250.0;
+   float ni_rate = 8.0;
+   float tax_rate = 15.0;
 
-   // define and initialise variables for the problem data
-   float salary;
-   float ni, tax, take_home;
+   // Calculations
+   float ni_contribution = salary * (ni_rate / 100.0);
 
-   // calculate the deductions and final take-home salary
-   ni = salary * 0.12f;
-   tax = salary * 0.20f;
-   take_home = salary - ni - tax;
+   float salary_after_ni = salary - ni_contribution;
 
-   // Use only these print statement with appropriate formatting and variable names
+   float taxable_amount = salary_after_ni - 12500.0f;
+   if (taxable_amount < 0.0f)
+   {
+      taxable_amount = 0.0f;
+   }
 
+   float tax_contribution = taxable_amount * (tax_rate / 100.0f);
+
+   float take_home_salary = salary_after_ni - tax_contribution;
+
+   // Use only these print statements with appropriate formatting and variable names
    printf("Salary £%.2f\n", salary);
-   printf("NI contribution £%.2f\n", ni);
-   printf("Tax contribution £%.2f\n", tax);
-   printf("Take home salary £%.2f\n", take_home);
+   printf("NI contribution £%.2f\n", ni_contribution);
+   printf("Tax contribution £%.2f\n", tax_contribution);
+   printf("Take home salary £%.2f\n", take_home_salary);
 
    return 0;
 }
